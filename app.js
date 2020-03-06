@@ -32,7 +32,7 @@ app.post('/', (req, res)=>{
         url: "https://us4.api.mailchimp.com/3.0/lists/6f5878fbcf",
         method: "POST",
         headers: {
-            "Authorization": "dhinesh 25c562ad50eec09a71799d2696e5dfec-us4",
+            "Authorization": "dhinesh 900b9e837e1fcd34a6b7f7608a876a57-us4",
         },
         body: jsonData
     }
@@ -46,6 +46,16 @@ app.post('/', (req, res)=>{
 
     });
 })
+
+app.get('/:customList', (req, res) => {
+    const customListName = req.params.cutomList;
+    
+    const list = new List({
+        name: customListName,
+        items: 
+    });
+
+});
 
 app.post('/failure', (req,res) => {
     res.redirect("/");
